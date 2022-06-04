@@ -1,10 +1,13 @@
+/* eslint-disable import/no-unresolved */
 const fs = require('fs');
 const path = require('path');
 const md = require('markdown-it')();
 const jsdom = require('jsdom');
 
 const { JSDOM } = jsdom;
-const fetch = require('node-fetch');
+const {
+  fetch,
+} = require('./fetchImport.js');
 
 const getAbsolutePath = (route) => {
   const error = '';

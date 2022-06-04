@@ -25,10 +25,6 @@ const mdLinks = (path, options = { validate: false }) => new Promise((resolve, r
   }
 });
 
-mdLinks('./mydirectory', { validate: true })
-  .then((resolve) => console.log(resolve))
-  .catch((error) => console.log(error));
-
 module.exports = {
   mdLinks,
 };
