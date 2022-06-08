@@ -1,7 +1,10 @@
 /* eslint-disable no-undef */
 const {
   mdLinks,
+  totalAndUnique,
 } = require('../src/index.js');
+
+jest.mock = require('../src/fetchImport.js');
 
 describe('mdLinks', () => {
   const arrayOfObjectsWithValidateFalse = [
@@ -23,7 +26,7 @@ describe('mdLinks', () => {
       text: 'Node.js',
       file: 'C:\\Users\\HP\\Documents\\Laboratoria-LIM017\\MD-links\\LIM017-md-links\\sampleDirectory\\directory3\\archive3.md',
       status: 200,
-      ok: 'OK',
+      ok: 'ok',
     },
   ];
   it('Debería devolverme un array de objetos de links con las propiedades href,text,file,status y ok', () => {
@@ -43,5 +46,12 @@ describe('mdLinks', () => {
       .catch((reject) => {
         expect(reject).toBe('the path is invalid');
       });
+  });
+});
+describe('totalAndUnique', () => {
+  const total = 'Total: 1';
+  const unique = 'Unique: 1';
+  it('Debería devolverme el total de links y el total de links únicos', () => {
+    expect(totalAndUnique('./fail.md')).toEqual(`${total} \n${unique}`);
   });
 });

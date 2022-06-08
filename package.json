@@ -8,6 +8,7 @@
     "cli-color": "^2.0.2",
     "jsdom": "^19.0.0",
     "markdown-it": "^13.0.1",
+    "node-emoji": "^1.11.0",
     "node-fetch": "^2.6.7"
   },
   "devDependencies": {

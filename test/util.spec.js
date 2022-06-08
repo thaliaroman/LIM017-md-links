@@ -4,7 +4,9 @@ const {
   getmdFileRoutes,
   getLinkObjects,
   validateLinks,
-} = require('../src/controllers.js');
+} = require('../src/util.js');
+
+jest.mock = require('../src/fetchImport.js');
 
 describe('getAbsolutePath', () => {
   const absoluteRoute = 'C:\\Users\\HP\\Documents\\Laboratoria-LIM017\\MD-links\\LIM017-md-links\\sampleDirectory';
@@ -55,7 +57,7 @@ describe('validateLinks', () => {
       text: 'Node.js',
       file: 'C:\\Users\\HP\\Documents\\Laboratoria-LIM017\\MD-links\\LIM017-md-links\\sampleDirectory\\directory3\\archive3.md',
       status: 200,
-      ok: 'OK',
+      ok: 'ok',
     },
   ];
   it('Debería devolverme un array de objetos de links con las propiedades href,text,file,status,ok', () => {
@@ -85,6 +87,21 @@ describe('validateLinks', () => {
     return validateLinks(getLinkObjects('./sampleDirectory/directory3/archive4.md'))
       .catch((error) => {
         expect(error).toEqual(linksValidatedWithError);
+      });
+  });
+  const linksValidatedWithFail = [
+    {
+      href: 'http://community.laboratoria.la/c/js',
+      text: 'foro de comunidad',
+      file: 'C:\\Users\\HP\\Documents\\Laboratoria-LIM017\\MD-links\\LIM017-md-links\\sampleDirectory\\directory3\\archive4.md',
+      status: 'was not resolved',
+      ok: 'falló',
+    },
+  ];
+  it('debería devolverme el array de objetos de link validados con status:404 y ok:"fail"', () => {
+    return validateLinks(getLinkObjects('./fail.md'))
+      .catch((error) => {
+        expect(error).toEqual(linksValidatedWithFail);
       });
   });
 });

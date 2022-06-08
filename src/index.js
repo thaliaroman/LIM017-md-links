@@ -1,11 +1,13 @@
-/* eslint-disable no-debugger */
-/* eslint-disable no-console */
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable no-undef */
+/* eslint-disable consistent-return */
 /* eslint no-use-before-define: 0 */ // --> OFF
+// eslint-disable-next-line no-useless-escape
 const {
   getAbsolutePath,
   getLinkObjects,
   validateLinks,
-} = require('./controllers.js');
+} = require('./util.js');
 
 const mdLinks = (path, options = { validate: false }) => new Promise((resolve, reject) => {
   const convertPath = getAbsolutePath(path);
@@ -25,6 +27,16 @@ const mdLinks = (path, options = { validate: false }) => new Promise((resolve, r
   }
 });
 
+const totalAndUnique = (path) => {
+  const objectsOfEachLink = (getLinkObjects(path));
+  const total = `Total: ${objectsOfEachLink.length}`;
+  const links = objectsOfEachLink.map((objectLink) => (objectLink.href));
+  const uniqueLinks = new Set(links);
+  const unique = `Unique: ${[...uniqueLinks].length}`;
+  return `${total} \n${unique}`;
+};
+
 module.exports = {
   mdLinks,
+  totalAndUnique,
 };
