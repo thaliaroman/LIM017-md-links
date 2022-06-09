@@ -17,7 +17,7 @@
 
 ## 1. Preámbulo
 
-[Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado
+[Markdown] es un lenguaje de marcado
 ligero muy popular entre developers. Es usado en muchísimas plataformas que
 manejan texto plano (GitHub, foros, blogs, ...), y es muy común
 encontrar varios archivos en ese formato en cualquier tipo de repositorio
@@ -32,12 +32,13 @@ la información que se quiere compartir.
 
 `.md Links` te va ha permitir leer y analizar archivos en formato markdown, para verificar los links que contengan y reportar algunas estadísticas.
 
-![mdLinks]C:\Users\HP\Documents\Laboratoria-LIM017\MD-links\LIM017-md-links\images\mdLinks.png
+![mdLinks](./images/mdLinks.png)
+
 
 ## 3. Diagrama de flujo
 Este es el digrama de flujo que se creo como punto de partida para empezar a construir `.md Links`
 
-![flujograma]C:\Users\HP\Documents\Laboratoria-LIM017\MD-links\LIM017-md-links\images\flujograma-md-links-thaliaroman.jpg
+![flujograma](./images/flujograma-md-links-thaliaroman.jpg)
 
 
 ## 4. Objetivos de aprendizaje
