@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 const clc = require('cli-color');
 const process = require('node:process');
-const emojis = require('node-emoji');
 const fs = require('fs');
 
 const [, , ...args] = process.argv;
@@ -20,24 +19,25 @@ if (args.length === 0) {
 } else if (args.length === 1 && !validate && !stats) {
   mdLinks(args[0], { validate: false })
     .then((resolve) => {
-      resolve.forEach((res) => console.log(`${clc.cyanBright(res.href)}  ${clc.magentaBright(res.text)} ${clc.blueBright(res.file)}`));
+      resolve.forEach((res) => console.log(`\n${clc.bgGreen.underline(res.href)} ${clc.green(res.text)}\n${clc.blueBright(res.file)}\n`));
     });
 } else if (args.length === 2 && validate && !stats) {
   mdLinks(args[0], { validate: true })
     .then((resolve) => {
-      resolve.forEach((res) => console.log(`${clc.cyanBright(res.href)}  ${clc.magentaBright(res.text)}  ${clc.blueBright(res.file)}  ${clc.greenBright(res.status)}  ${clc.redBright(res.ok)}`));
+      resolve.forEach((res) => console.log(`\n${clc.bgGreen.underline(res.href)} ${clc.green(res.text)}\n${clc.blueBright(res.file)}\n${clc.yellow(res.status)}   ${clc.magenta(res.ok)}\n`));
     });
 } else if (args.length === 2 && !validate && stats) {
   mdLinks(args[0], { validate: true })
     .then(() => {
       const totalUnique = totalAndUnique(args[0]);
-      console.log(totalUnique);
+      console.log(`${clc.blueBright(totalUnique)}`);
     });
 } else if (args.length === 3 && validate && stats) {
   mdLinks(args[0], { validate: true })
     .then((resolve) => {
       const totalUnique = totalAndUnique(args[0]);
-      const broken = resolve.filter((element) => element.ok !== 'ok').length;
-      console.log(`${totalUnique}\nBroken:${broken}`);
+      let broken = resolve.filter((element) => element.ok !== 'ok').length;
+      broken = `Total: ${broken}`;
+      console.log(`${clc.cyan(totalUnique)}\n${clc.cyan(broken)}`);
     });
 }

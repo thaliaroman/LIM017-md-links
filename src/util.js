@@ -64,7 +64,7 @@ const validateLinks = (objectsOfEachLink) => {
       status: resolve.status,
       ok: (resolve.status >= 200) && (resolve.status <= 399) ? 'ok' : 'fail',
     }))
-    .catch((error) => ({
+    .catch(() => ({
       ...objectLink,
       status: 'was not resolved',
       ok: 'falló',
