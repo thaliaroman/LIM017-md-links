@@ -45,14 +45,14 @@ Para la instalar  `.md Links` el usuarios debe ejecutar la siguiente línea de c
 ## 5. Instrucciones
 con `.md Links` el usuario va a poder escribir diferentes argumentos o comandos en la terminal para obtener la información requerida. Va a poder trabajar con rutas y opciones.
 
-5.1. Ingresando  md-links `path` , obtendrá por cada link encontrado
+5.1. Ingresando  md-links `path` , obtendrá por cada link encontrado:
 `link` `texto del link`
 `ruta absoluta donde se encontró el link`
 
 Por ejemplo :
 ![ejemplo con path](./images/path.jpeg)
 
-5.2. Ingresando md-links `path` y la opción `--validate`, obtendrá por cada Link encontrado
+5.2. Ingresando md-links `path` y la opción `--validate`, obtendrá por cada Link encontrado:
 `link` `texto del link`
 `ruta absoluta donde se encontró el link`
 `status del link` `mensaje ok , o de error si el link está roto`
@@ -60,14 +60,14 @@ Por ejemplo :
 Por ejemplo :
 ![ejemplo con path y validate](./images/path--validate.jpeg)
 
-5.3. Ingresando md-links `path` y la opción `--stats`, obtendrá
+5.3. Ingresando md-links `path` y la opción `--stats`, obtendrá:
 `total de liks encontrados`
 `total de links únicos`
 
 Por ejemplo :
 ![ejemplo con path y stats](./images/path--stats.jpeg)
 
-5.4. Ingresando md-links `path` y las opciones `stats` y `--validate` obtendrá
+5.4. Ingresando md-links `path` y las opciones `stats` y `--validate` obtendrá:
 `total de liks encontrados`
 `total de links únicos`
 `total de liks rotos`
@@ -75,7 +75,7 @@ Por ejemplo :
 por ejemplo :
 ![ejemplo con path y stats](./images/path--validate--stats.jpeg)
 
-6. Autor
+## 6. Autor
 
 Thalia Román López
 
