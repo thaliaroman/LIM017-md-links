@@ -40,7 +40,7 @@ Este es el digrama de flujo que se creó como punto de partida para empezar a co
 ## 4. Instalación
 Para la instalar  `.md Links` el usuarios debe ejecutar la siguiente línea de comando en tu terminal:
 
-`npm i md-links-thalia`
+`npm i npm-links`
 
 ## 5. Instrucciones
 con `.md Links` el usuario va a poder escribir diferentes argumentos o comandos en la terminal para obtener la información requerida. Va a poder trabajar con rutas y opciones.
