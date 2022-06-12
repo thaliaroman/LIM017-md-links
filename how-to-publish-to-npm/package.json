@@ -1,0 +1,19 @@
+{
+  "name": "npm-links",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "thaliaroman",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thaliaroman/LIM017-md-links.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thaliaroman/LIM017-md-links/issues"
+  },
+  "homepage": "https://github.com/thaliaroman/LIM017-md-links#readme",
+  "description": ""
+}
