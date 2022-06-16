@@ -37,7 +37,7 @@ if (args.length === 0) {
     .then((resolve) => {
       const totalUnique = totalAndUnique(args[0]);
       let broken = resolve.filter((element) => element.ok !== 'ok').length;
-      broken = `Total: ${broken}`;
+      broken = `Broken: ${broken}`;
       console.log(`${clc.cyan(totalUnique)}\n${clc.cyan(broken)}`);
     });
 }
